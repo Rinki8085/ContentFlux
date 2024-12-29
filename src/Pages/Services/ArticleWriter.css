@@ -1,0 +1,258 @@
+.article-writer{
+   padding: 3rem 4rem;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+}
+
+.article-writer>div{
+   border-radius: 10px;
+   padding: 2rem;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   color: #312e5f;
+}
+
+.article-writer>div>div:first-child{
+   display: flex;
+   justify-content:space-between;
+}
+
+.article-writer>div>p{
+   font-size: 0.9rem;
+   line-height: 2rem;
+}
+
+.article-box1{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 30px;
+   padding: 4rem 5rem;
+   color: #312e5f;
+}
+
+.article-box1>div>img{
+   height: 490px;
+   width:100%;
+}
+
+.who_we>p{
+   font-size: 0.9rem;
+   font-style: italic;
+   line-height: 1.75rem;
+}
+
+.who_we>div>p{
+   font-size: 0.85rem;
+   line-height: 1.5rem;
+}
+
+.who_we>div>button, .article-box2>center>button{
+   border: none;
+   background-color: #312e5f;
+   padding: 1rem 1.2rem;
+   font-size: 1.15rem;
+   color: white;
+   margin-top: 20px;
+}
+
+.article-box2, .article-box3{
+   padding: 3rem 4rem;
+   color: #312e5f;
+}
+
+.article-box2>h3{
+   text-align: center;
+}
+
+.article-box2>p{
+   width: 70%;
+   margin: auto;
+}
+
+.service-types{
+   margin: 2.5rem 1.5rem;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+}
+
+.service-types>div{
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   padding: 2rem 3rem;
+   text-align: center;
+}
+
+.article-box3{
+   display: flex;
+   gap: 2rem;
+}
+
+.article-box3>div{
+   width: 50%;
+}
+
+.help-brands>p{
+   line-height: 1.8rem;
+   font-size: 0.9rem;
+}
+
+.help-brands>div{
+   margin-top: 20px;
+   display: flex;
+   gap: 20px;
+}
+
+.help-brands>div>img{
+   margin-top: 10px;
+}
+
+.help-brands>div>div>p{
+   font-size:0.9rem;
+   line-height: 1.8rem;
+}
+
+
+@media screen and ( max-width: 1024px){
+   .article-writer {
+      padding: 3rem 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+  }
+   .article-writer>div {
+      padding: 1rem 1.5rem;
+   }
+   .article-writer>div>div:first-child>h3{
+      font-size: 16px;
+   }
+   .article-writer>div>div:first-child>img{
+      width: 50px;
+      height: 50px;
+   }
+   .article-writer>div>p {
+      font-size: 13px;
+      line-height: 1.5rem;
+   }
+   .article-box1>div:first-child{
+      display: flex;
+      justify-content: center;
+      width: 70%;
+      margin: auto;
+  }  
+   .article-box1 {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 30px;
+      padding: 3rem 3rem;
+      color: #312e5f;
+   }
+   .who_we{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+   }
+   .article-box2, .article-box3 {
+      padding: 3rem ;
+   }
+   .article-box2>p {
+      width: 100%;
+      text-align: center;
+   }
+   .service-types>div {
+      padding: 1rem 1.5rem;
+   }
+   .service-types {
+      margin: 2.5rem 0;
+   }
+}
+
+/* ------- tablet view ------- */
+@media screen and (max-width: 820px){
+   .article-content>div {
+      display: grid;
+      grid-template-columns: auto;
+   }
+   .article-box1>div>img {
+      width: 92%;
+      height: 350px;
+  }
+  .service-types {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+   }
+   .article-box3{
+     flex-direction: column;
+      gap: 1rem;
+   }
+   
+   .article-box3>div{
+      width: 100%;
+   }
+   .article-box3>div:first-child{
+      display: flex;
+      justify-content: center;
+   }
+   .article-box3>div:first-child>img{
+      width: 65%;
+   }
+}
+
+/* ------- mobile view ------- */
+@media screen and (max-width: 512px) {
+   .article-box2>h3{
+      font-size: 1.1rem;
+   }
+   .article-box2>p{
+      font-size: 0.85rem;
+      line-height: 20px;
+   }
+   .services-main {
+      padding: 4rem 2rem;
+      grid-template-columns: auto;
+  }
+  .cta {
+      width: 100%;
+      margin-top: 0;
+   }
+   .who_we>h3{
+      font-size: 1.1rem;
+   }
+   .article-writer {
+      padding: 2rem;
+      grid-template-columns: auto;
+  }
+  .article-box1 {
+      gap: 16px;
+      padding: 1.5rem;
+  }
+  .service-types>div>h3{
+   font-size: 0.9rem;
+  }
+  .service-types>div>p{
+   font-size: 0.8rem;
+  }
+  .help-brands>h3{
+   font-size: 0.9rem;
+  }
+  .help-brands>p{
+   font-size: 0.8rem;
+   line-height: 20px;
+  }
+  .help-brands>div>img{
+   width:30px;
+   height:30px;
+  }
+  .help-brands>div>div>h3{
+   font-size: 0.9rem;
+  }
+  .help-brands>div>div>p{
+   font-size: 0.8rem;
+   line-height: 20px;
+  }
+  .article-box2, .article-box3 {
+      padding: 1.5rem;
+   }
+   .service-types {
+      grid-template-columns: auto;
+   }
+}

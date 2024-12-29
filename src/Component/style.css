@@ -1,0 +1,448 @@
+/* --- navbar start --- */
+
+.navbar{
+   padding:20px 40px 20px 40px;
+   width: 100%;
+   position: fixed;
+   top: -21px;
+   left: -34px;
+   z-index: 9;
+   /* overflow: scroll; */
+}
+
+.navigation{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   padding:25px 20px 0px 20px;
+}
+
+.navbar_tab{
+   display:flex;
+   flex-direction: row;
+   gap:15px;
+}
+
+.navbar_tab>a{
+   border:1px solid #312e5f;
+   border-radius:31px;
+   padding:15px 20px;
+}
+
+.navbar_tab>a:hover{
+   background-color: #312e5f;
+   color: #F1EAFF !important;
+   border: none;
+}
+
+.navbar_tab>a{
+   text-decoration: none;
+   color:#312e5f;
+}
+.accordion{
+   width: 60%;
+   margin: auto;
+}
+.accor>div{
+   padding: 10px;
+}
+.accor>div:nth-child(2){
+   line-height: 23px;
+   font-size: 0.9rem;
+}
+.accordion>.accor:last-child>div:nth-child(1){
+   border-bottom: none;
+}
+.accor>div:nth-child(1){
+   display: flex;
+   line-height: 0px;
+   gap:10px;
+   border-bottom: 1px solid black;
+   justify-content: space-between;
+   align-items: center;
+   cursor: pointer;
+}
+.accor>div>h3{
+   line-height: 1px;
+} 
+.accor-list{
+   list-style-type:disk;
+   padding-left: 25px;
+}
+/* ---- navbar end ---- */
+
+/* ---- contact form start ---- */
+.contact-form{
+   padding:58px 3rem;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap:20px;
+   background-color: rgb(244, 250, 235);
+   padding-top: 5rem;
+}
+
+.form-content{
+   display: flex;
+   flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0px;
+    line-height: 10px;
+}
+
+.form-content>h1{
+   font-size: 2.1rem;
+   color:#312e5f;
+}
+
+.form-text{
+   line-height:30px;
+   font-weight:500;
+   color:black;
+   font-size: 0.9rem;
+}
+
+.links{
+   font-size: 0.9rem;
+   display: inline-flex;
+   align-items: center;
+   gap: 10px;
+   margin-block-end: 0em !important;
+}
+
+.links>span:nth-child(1){
+   color: #312e5f;
+   font-size: 1rem;
+}
+
+.links>span>a{
+   text-decoration: none;
+   color:black;
+}
+
+.form{
+   background-color: #312e5f;
+   height:auto;
+   padding: 31px 28px;
+}
+
+.name-section{
+   display:flex;
+   flex-direction: row;
+   gap:20px;
+  
+}
+
+.name-section>input[type="text"]{
+   width:50%;
+   height:35px;
+   margin-bottom:25px;
+   outline: none;
+   padding: 5px 10px 5px 20px;
+   font-size:1.2rem;
+}
+
+.email-section>input[type="text"]{
+   width:94%;
+   height:35px;
+   margin-bottom:25px;
+   outline: none;
+   padding: 5px 10px 5px 20px;
+   font-size:1.2rem;
+}
+
+textarea{
+   width:94%;
+   height:100px;
+   margin-bottom: 25px;
+   outline: none;
+   resize:none;
+   padding: 5px 10px 5px 20px;
+   font-size:0.9rem;
+}
+
+.message{
+   width:30%;
+   margin:auto;
+}
+
+input[type='submit']{
+   width:100%;
+   height:60px;
+   padding:10px;
+   text-align: center;
+   background-color: #b4a6ca;
+   color:#312e5f;
+   font-size:1.2rem;
+   border: none;
+   outline:none;
+   cursor: pointer;
+}
+
+.sendButton{
+   width: 100%;
+   border-radius: 7px;
+   padding: 14px 4px;
+   font-size: 1.2rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   color:#312e5f;
+   margin-top: 10px;
+   background-color: #F1EAFF;
+   cursor: pointer;
+}
+
+/* ----- contact form end ----- */
+
+/* ------- Footer Start ------- */
+
+footer{
+   background-color: #312e5f;
+   color:white;
+   padding:20px;
+}
+
+.footer-section{
+   /* margin-top: 4.5%; */
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap:17px;
+   /* align-items: center; */
+}
+
+.footer-section>div{
+   text-align: center;
+}
+
+.footer-section>div:nth-child(1){
+   font-size:1.15rem;
+   line-height:31px;
+}
+
+.flex-center{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap:10px;
+}
+
+   ul{
+      list-style: none;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding-inline-start: 0;
+   }
+
+   ul>li>a{
+      color:white;
+      text-decoration: none;
+   }
+
+   .list>li>a{
+      height:45px;
+      font-size:1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:10px;
+   }
+
+   .fSize{
+      font-size:1.4rem;
+   }
+
+   .pageList>li{
+      height:35px;
+   }
+
+   #emailId{
+      width:92%;
+      height:35px;
+      padding:10px 10px 10px 15px;
+      margin-top: 25px;
+      margin-bottom:25px;
+      font-size:1.2rem;
+      outline:none;
+   }
+
+   .submission{
+      height:35px;
+      width:40%;
+      margin: auto;
+   }
+
+   .submission>button{
+      width:100%;
+      padding:20px;
+      font-size:1.2rem;
+      color:#312e5f;
+      font-weight:500;
+      cursor:pointer;
+   }
+
+   .bottom-section{
+      margin-top: 2.5%;
+      border-top: 0.5px solid whitesmoke;
+      padding: 23px 0px 0px 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   .social-icon{
+      display: flex;
+      flex-direction: row;
+      gap:35px;
+      font-size:1.4rem;
+   }
+
+.social-icon>div:first-child{
+   font-size:1.1rem;
+}
+
+.services{
+   position: relative;
+   /* left: -40px; */
+}
+
+.services:hover .services-list{
+   visibility: visible;
+   opacity: 1;
+}
+
+.services-list{
+   visibility: hidden;
+   opacity: 0;
+   position: absolute;
+   top: 38px;
+   left: -100px;
+   background-color: white;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   border-radius: 7px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   padding:10px;
+}
+
+.services-list>a{
+   padding: 13px;
+   font-size: 0.75rem;
+   text-wrap: nowrap;
+   color:#312e5f;
+   font-weight: 500;
+   text-decoration: none;
+}
+
+.services-list>a:hover{
+   color:#b4a6ca;
+   background-color: #312e5f;
+}
+
+/* ---- Footer End ---- */
+
+/* ------- responsive -------- */
+
+@media screen and (max-width: 1024px){
+   .navigation{
+      padding: 18px 17px 18px 17px;
+   }
+   .navigation>div:nth-child(1) {
+      padding-top: 0px;
+  }
+   .navigation>div:nth-child(1)>img{
+      height: 29px;
+      width: 107px;
+   }
+   .navbar{
+      left: -45px;
+   }
+   .navbar_tab>div{
+      border-radius: 22px;
+      padding: 11px 16px;
+      height: 11px;
+      font-size: 0.6rem;
+   }
+}
+
+@media screen and (max-width: 868px){
+   .footer-section>div:nth-child(1) {
+      font-size: 0.75rem;
+      line-height: 22px;
+   }
+   .list>li>a {
+      height: 30px;
+      font-size: 0.75rem;
+   }
+   .pageList>li {
+      font-size: 0.75rem;
+      height: 24px;
+  }
+  #emailId {
+      height: 15px;
+      margin-top: 0px;
+      font-size: 1rem;
+   }
+   .submission {
+      height: 25px;
+      width: 57%;
+   }
+   .submission>button {
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+   }
+   .name-section>input[type="text"],.email-section>input[type="text"]  {
+      height: 32px;
+      padding: 5px 10px 5px 10px;
+      font-size: 1rem;
+  }
+  input[type='submit'] {
+   height: 47px;
+   padding: 6px;
+   font-size: 1.1rem;
+   }
+   .links{
+      font-size: 0.8rem;
+   }
+   .accordion{
+      width: 75%;
+   }
+   .accor>div>h4{
+      font-size: 0.75rem;;
+   }
+}
+
+@media screen and (max-width: 427px){
+   .accordion{
+      width:90%;
+   }
+   .accor>div:nth-child(1){
+      line-height: 20px;
+      font-size: 0.8rem;
+   }
+   .accor>div:nth-child(2){
+      line-height: 20px;
+      font-size: 0.75rem;
+   }
+   .accor>div{
+      padding: 2px;
+   }
+   .footer-section {
+      grid-template-columns: auto !important;
+      align-items: center;
+   }
+   .pageList{
+      display: flex;
+      gap: 16px;
+   }
+   .bottom-section {
+      margin-top: 19.5%;
+      flex-direction: column;
+      gap:20px;
+  }
+  .contact-form{
+      grid-template-columns: repeat(1, 1fr) !important;
+  }
+}

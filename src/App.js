@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import AllRoutes from "./Routes/AllRoutes";
+import Navbar from './Component/Navbar';
+import ContactForm from "./Component/ContactForm";
+import Footer from "./Component/Footer";
 import './App.css';
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
+  let { pathname } = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar/>
+      <AllRoutes/>
+      {pathname!=="/thankyou" && <ContactForm />}
+      <Footer />
+    </>
   );
 }
 
