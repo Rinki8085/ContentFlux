@@ -1,10 +1,22 @@
-import React from "react";  
+import React, { useEffect } from "react";  
 import Services from "./Services";
 import "./ArticleWriter.css";
+import { Helmet } from "react-helmet-async";
 
 const Copywriter = () =>{
+
+   useEffect(()=>{
+      document.title = 'Professional Copywriting Services | Captivating Content That Converts'
+   },[])
+
    return(
       <div>
+         <Helmet>
+         <meta 
+            name="description" 
+            content="Boost your brand with our expert copywriting services. We craft compelling, persuasive content that engages your audience and drives conversions." 
+         />
+         </Helmet>
          <Services text={"Copy Writer"}>
             <div className="article-writer">
                <div>

@@ -87,4 +87,7 @@
    .menu{
       font-size:1.5rem;
    }
+   .navbar{
+      padding-block: 21px;
+   }
 }

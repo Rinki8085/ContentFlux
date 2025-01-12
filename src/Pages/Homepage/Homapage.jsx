@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CompanyNiche from '../../Component/Company_Niche';
 import InfinteScrollSlider from './InfiniteScroll';
 import {FaLongArrowAltRight} from 'react-icons/fa';
@@ -9,6 +9,8 @@ import CountUp from "react-countup";
 import Slider from './Slider';
 import "./MobileView.css";
 import "./Homepage.css";
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 let data = [
    {
@@ -87,8 +89,18 @@ let writer_data = [
 
 function Homepage(){
 
+   useEffect(()=>{
+      document.title = 'Best Content Writing Service | Content Writing company | ContentFlux'
+   },[])
+
    return(
       <div>
+         <Helmet>
+            <meta 
+               name="description" 
+               content="ContentFlux is the best content writing service that fulfils all content requirements. Our dedicated service ensures that your brand message reaches your audience with the best clarity." 
+            />
+         </Helmet>
          <div className='Homepage'>
          {/* ------- Header ----- */}
             <div className='main_homepage_text'> 
@@ -97,13 +109,17 @@ function Homepage(){
                         <p>In the world of buzzing information, empower your brand with the art of storytelling that captivates, educates, and inspires.</p>
 
                         <div className='main_head_contact'>
-                           <div>
-                              <span>Get Started</span><span style={{paddingTop:"5px"}}><FaLongArrowAltRight/></span>
+                           <div className='animated-button'>
+                              <span className='text'>Get Started</span>
+                              <span style={{paddingTop:"5px"}} className='icon'>
+                                 <FaLongArrowAltRight/>
+                              </span>
                            </div>
                            <div>
-                              <a href='/contact'>
-                              <span>Contact Us</span><span style={{paddingTop:"5px"}}><MdPhoneEnabled/></span>
-                              </a>
+                              <Link href='/contact' className='call-button'>
+                                 <span>Contact Us</span>
+                                 <MdPhoneEnabled className='icon' />
+                              </Link>
                            </div>
                         </div>
                   </div>
@@ -114,7 +130,7 @@ function Homepage(){
                         </div>
                         <div className='play-button'></div>
                         <div className='rounded left'>
-                           <img src="/Images/image2.jpg" alt="logoImg" />
+                           <img src="/Images/Image2.jpg" alt="logoImg" />
                         </div>
                      </div>
                      {/* <div>
@@ -123,24 +139,27 @@ function Homepage(){
                   </div>
             </div>
          </div>
-         <div style={{marginTop:"4.5%"}}>
+         {/* <div style={{marginTop:"4.5%"}}>
             <InfinteScrollSlider/>
-         </div>
+         </div> */}
          {/* -------- About section ------ */}
          <div className='about_wrytr'>
             <div className='about_wrytr_text'>
                <div>
-                  <p>Welcome to Inos Content- Where Words Transform Stories</p>
-                  <p>At Inos Content we believe the power of words, where we focus to create the brand message should reach the target audience with the best clarity. Our content writing service makes sure we breathe life into the ideas. Our seasoned expertise pen down content to create the interest among your audience, optimize them with better knowledge so that the brand can make sales.
+                  <p>Welcome to ContentFlux Content- Where Words Transform Stories</p>
+                  <p>At ContentFlux Content we believe the power of words, where we focus to create the brand message should reach the target audience with the best clarity. Our content writing service makes sure we breathe life into the ideas. Our seasoned expertise pen down content to create the interest among your audience, optimize them with better knowledge so that the brand can make sales.
                   Storytelling remains the heartbeat of connection to bring your narrative to life.
                   </p>
-                  <div className='main_head_contact'>
-                     <div>
-                        
-                           <span><a href='/contact' style={{textDecoration:'none', color:'white'}}>Get Quote </a></span><span style={{paddingTop:"5px"}}><FaLongArrowAltRight/></span>
-                       
-                        </div>
-                  </div>
+                  <Link to='/contact' style={{textDecoration:"none !important"}}>
+                     <div className='main_head_contact'>
+                        <div className='animated-button'>
+                              <span>Get Quote </span>
+                              <span style={{paddingTop:"5px"}} className='icon'>
+                                 <FaLongArrowAltRight/>
+                              </span>
+                           </div>
+                     </div>
+                  </Link>
                </div>
             </div>
             <div>
@@ -164,17 +183,22 @@ function Homepage(){
                   <img src={item.img} alt="illustration" />
                   <p className='grid_box_heading'>{item.heading}</p>
                   <p>{item.para}</p>
-                  <span className='read_more_btn'>
-                     <span>Read More</span><span><FaLongArrowAltRight/></span>
-                  </span>
+                  <Link to='/contact' className='read_more_btn animated-button'>
+                     
+                     <span>Learn More</span>
+                     <span style={{paddingTop:"5px"}} className='icon'><FaLongArrowAltRight/></span>
+                  </Link>
                </div>
                )}
             </div>
+            <Link to='/contact' style={{textDecoration:"none"}}>
             <div className='main_head_contact' style={{width:"220px",margin:"auto",padding:"35px 0px 45px 0px"}}>
-               <div style={{backgroundColor:"white",color:"#1B4541"}}>
-                  <span><a href='/contact' style={{textDecoration:'none', color:'#1B4541'}}>Get Started </a></span><span style={{paddingTop:"5px"}}><FaLongArrowAltRight/></span>
+               <div className='animated-button get-start'>
+                  <span >Get Started</span>
+                  <span style={{paddingTop:"5px"}} className='icon'><FaLongArrowAltRight/></span>
                </div>
             </div>
+            </Link>
          </div>
          {/* ------ Strategy ------ */}
          <div className='stratgy'>
@@ -199,9 +223,11 @@ function Homepage(){
                   <h4>{item.heading}</h4>
                   <p>{item.para}</p>
                   <br/>
-                  <span className='read_more_btn' style={{color:'#364541',justifyContent:"flex-start"}}>
-                     <span>Read More</span><span><FaLongArrowAltRight/></span>
-                  </span>
+                  <Link to='/contact' style={{textDecoration:"none", color:'#364541 !important'}}>
+                     <p className='read_more_btn color-white animated-button' style={{color:'#364541 !important',justifyContent:"flex-start"}}>
+                        <span>Learn More</span><span className='icon'><FaLongArrowAltRight/></span>
+                     </p>
+                  </Link>
                   <br/>
                   <hr/>
                </div>
@@ -213,7 +239,7 @@ function Homepage(){
            <Testimonial />
          </div>
          {/* -------- react countup -------- */}
-         <div className='counter_number'>
+         {/* <div className='counter_number'>
             <div><CountUp end={210} suffix="+" duration={3} style={{fontSize:"3rem"}}/>
                <p>Client Consultation</p>
             </div>
@@ -226,19 +252,19 @@ function Homepage(){
             <div><CountUp end={1200} suffix="+" duration={3} style={{fontSize:"3rem"}}/>
                   <p>Working Hours</p>
             </div>
-         </div>
+         </div> */}
          {/* -------- end ------- */}
 
          {/* -------- traffice visitors ------ */}
          <div className='traffic'>
-            <div className='visitors'>
+            <div className='visitors pb-5'>
                <div>
                   <h1>We focus on Building Interest, Optimize & Make Sales With the best Words with best Clarity</h1>
-                  <a href='/contact'><div className='main_head_contact' style={{justifyContent:'center'}}> 
-                     <div style={{backgroundColor:"#312e5f",color:'white', marginBottom: '15px'}}>
-                        <span>Contact US</span><span style={{paddingTop:"5px"}}><FaLongArrowAltRight/></span>
+                  <Link href='/contact' style={{display:'flex', justifyContent:"center"}}><div className='main_head_contact !h-[75px]' style={{justifyContent:'center', textDecoration: "none"}}> 
+                     <div className='contact-visitor animated-button'>
+                        <span>Contact US</span><span className='icon' style={{paddingTop:"5px"}}><FaLongArrowAltRight/></span>
                      </div>
-                  </div> </a>
+                  </div> </Link>
                </div>
             </div>
          </div>

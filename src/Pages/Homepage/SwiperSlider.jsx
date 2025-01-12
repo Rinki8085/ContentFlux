@@ -11,8 +11,8 @@ import "swiper/css/autoplay";
 let testimonial_data = [
    {
       "id":1,
-      "img":"/Images/Testimonial_1.jpg",
-      "name":"Londsay",
+      "img":"/Images/dummyUser.png",
+      "name":"Dotnik Studio Pvt Ltd",
       "para":"Lorem ipsum dorm sit amet, consec tetiur adipiscing elit.",
       "rating":false
    },
@@ -34,7 +34,7 @@ let testimonial_data = [
 
 function StarRating(){
    return(
-      <div style={{marginBottom:'12px'}}>
+      <div style={{marginBottom:'12px'}} className='flex'>
          {[1,2,3,4,5].map((item)=>
             <FaStar style={{fontSize:"1.2rem",color:"#FFC859",paddingRight:"5px"}} key={item} /> 
          )}
@@ -61,7 +61,7 @@ function SwiperSlider(){
                   <div className='testimonial_slides'>
                      <StarRating />
                      <div className='slides_text'>
-                     Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Etiam ullam corper risus nec porttitor rhoncus. Etiam dolor arcu, vulputate id lobortis a, fringilla vitae nisi. Pellentesque bibendum efficitur.
+                     ContentFlux has been an incredible partner for our content needs. They really took the time to understand our brand and what we wanted to communicate. The content they delivered wasn’t just well-written but also felt aligned with our voice and goals. It’s been refreshing to work with a team that’s so dedicated and detail-oriented. We’re excited to continue working with them..
                      </div>
                      <div className='client_image'>
                         <div className='image'>

@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaLongArrowAltRight } from "react-icons/fa";
 import "../Homepage/Homepage.css";
+import { Helmet } from 'react-helmet-async';
 import "./About.css";
+import { Link } from 'react-router-dom';
 
 function About(){
+  
+   useEffect(()=>{
+      document.title = 'About Us | Professional Content Writing Services for Startups and Enterprises'
+   },[])
+
    return(
       <div>
+         <Helmet>
+            <meta 
+               name="description" 
+               content="Discover our story and expertise in delivering top-notch content writing services. We help startups and enterprises worldwide achieve their goals with impactful content." 
+            />
+         </Helmet>
          <div class="banner-container">
             <div class="overlay">
                <h2>About Us</h2>
@@ -23,11 +36,14 @@ function About(){
                   <p>At Inos Content we believe the power of words, where we focus to create the brand message should reach the target audience with the best clarity. Our content writing service makes sure we breathe life into the ideas. Our seasoned expertise pen down content to create the interest among your audience, optimize them with better knowledge so that the brand can make sales.
                   Storytelling remains the heartbeat of connection to bring your narrative to life.
                   </p>
-                  <div className='main_head_contact'>
+                  <Link to='/contact' style={{textDecoration:"none"}}>
+                  <div className='main_head_contact animated-button'>
                      <div>
-                        <span><a href='/contact' style={{textDecoration:'none', color:'white'}}>Get Quote </a></span><span style={{paddingTop:"5px"}}><FaLongArrowAltRight/></span>
+                        <span>Get Quote</span>
+                        <span style={{paddingTop:"5px"}} className='icon'><FaLongArrowAltRight/></span>
                         </div>
                   </div>
+                  </Link>
                </div>
             </div>
             <div>

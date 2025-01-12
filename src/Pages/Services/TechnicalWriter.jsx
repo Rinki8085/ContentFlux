@@ -1,7 +1,8 @@
-import React from "react";  
+import React, { useEffect } from "react";  
 import Services from "./Services";
 import "./ArticleWriter.css";
 import Accordion from "../../Component/Accordion";
+import { Helmet } from "react-helmet-async";
 
 const para ='Complex and specific topics like technology, science, engineering, medicine, finance or law need to be explained properly, so that customers of every education level can easily understand the message and information. Technical content writing services make such complex topics easily understandable.'
 
@@ -39,8 +40,18 @@ const faqs = [
 ]
 
 const TechnicalWriter = () =>{
+      useEffect(()=>{
+         document.title = 'Technical Content Writing Services | Clear and Accurate Content'
+      },[])
+
    return(
       <div>
+         <Helmet>
+            <meta
+               name="description"
+               content="Simplify complex concepts with our technical content writing services. We deliver precise, well-researched, and user-friendly technical content."
+            />
+         </Helmet>
          <Services text={"Technical Content Writing Services"} para={para} >
             <div className="article-writer">
                <div>

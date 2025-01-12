@@ -1,7 +1,8 @@
-import React from "react";  
+import React, { useEffect } from "react";  
 import Services from "./Services";
 import "./ArticleWriter.css";
 import Accordion from "../../Component/Accordion";
+import { Helmet } from "react-helmet-async";
 
 const para = 'To convert a visitor into a buyer businesses need amazing text and visual content. These content must engage visitors and deliver the features and benefits of the product in a very effective way, that’s where product description writing services comes into action.';
 
@@ -34,8 +35,19 @@ const faqs = [
 ]
 
 const ProductDescript = () =>{
+   
+   useEffect(()=>{
+      document.title = 'Product Description Writing Services | Highlight Your Products Effectively'
+   },[])
+
    return(
       <div>
+         <Helmet>
+         <meta 
+               name="description" 
+               content="Discover our story and expertise in delivering top-notch content writing services. We help startups and enterprises worldwide achieve their goals with impactful content." 
+            />
+         </Helmet>
          <Services text={"Product Description Writing Services"} para={para}>
             <div className="article-writer">
                <div>

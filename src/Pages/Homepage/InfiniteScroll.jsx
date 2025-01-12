@@ -7,27 +7,27 @@ import Slider from "react-slick";
 let image_data = [
    {
       "id":1,
-      "img":"/images/clientlogo_1.png"
+      "img":"/Images/clientlogo_1.png"
    },
    {
       "id":2,
-      "img":"/images/clientlogo_2.png"
+      "img":"/Images/clientlogo_2.png"
    },
    {
       "id":3,
-      "img":"/images/clientlogo_3.png"
+      "img":"/Images/clientlogo_3.png"
    },
    {
       "id":4,
-      "img":"/images/clientlogo_4.png"
+      "img":"/Images/clientlogo_4.png"
    },
    {
       "id":5,
-      "img":"/images/clientlogo_5.png"
+      "img":"/Images/clientlogo_5.png"
    },
    {
       "id":6,
-      "img":"/images/clientlogo_6.png"
+      "img":"/Images/clientlogo_6.png"
    }
 ];
 

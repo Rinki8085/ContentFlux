@@ -57,7 +57,7 @@
    margin-top: 2rem;
 }
 
-.cta>input[type="text"], .cta>textarea{
+.cta>input[type="text"], .cta>input[type="email"], .cta>textarea{
    width:-webkit-fill-available;
    background-color: transparent;
    border: 1.5px solid rgb(244, 250, 235);

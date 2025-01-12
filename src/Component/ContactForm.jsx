@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 function ContactForm(){
    const navigate = useNavigate();
+   const [submit, setSubmit] = useState();
    const [name, setName] = useState('');
    const [email, setEmail] = useState('');
    const [phone, setPhone] = useState('');
@@ -16,8 +17,9 @@ function ContactForm(){
 
    const handleSubmit = async(event) =>{
       event.preventDefault();
+      setSubmit(true);
       try {
-         if(name!=='' && email!=='' && phone!=='' && message!==''){
+         if(name!=='' && email!=='' && message!==''){
             let data ={
                name, email, phone, message
             }
@@ -25,12 +27,14 @@ function ContactForm(){
             axios.post("https://getform.io/f/azyyypzb", data,
             { headers: {'Accept': 'application/json'}})
             .then(response => {console.log(response);
+               setSubmit(false);
                navigate("/thankyou")
             })
             .catch(error => console.log(error))
          }
       } catch (error) {
          console.log(error);
+         setSubmit(false);
       }
    }
 
@@ -38,19 +42,22 @@ function ContactForm(){
       <div className='contact-form'>
          <div className='form-content'>
             <h1>Let's Connect</h1>
+            <p style={{lineHeight:"17px"}}>Stand out in a sea of AI-generated sameness</p>
             <p className='form-text'>We understand that behind every project lies a story waiting to be shared. Reach out to us, and let's embark on this storytelling adventure together.</p>
-            <p className='links'><span><IoLocationSharp/></span><span>918 Abner Road, Hudson</span></p>
-            <p className='links'><span><MdEmail/></span><span><a href="#">example@mail.com</a></span></p>
-            <p className='links'><span><FaPhoneAlt/></span><span><a href="#">+1 234 567 890</a></span></p>
+            <p className='links'><span><IoLocationSharp/></span><span>405, Shreeji Heights, Indore 452016</span></p>
+            <p className='links'><span><MdEmail/></span><span><a href="#">info@thecontentflux.com</a></span></p>
+            <p className='links'><span><FaPhoneAlt/></span><span><a href="#">+91 7509745109</a></span></p>
          </div>
          <div className="">
             {/* <form onSubmit={handleSubmit}> */}
             <div className="cta">
                <input type="text" placeholder="Name" value={name} onChange={(event)=>setName(event.target.value)} />
-               <input type="text" placeholder="Email" value={email} onChange={(event)=>setEmail(event.target.value)} />
+               <input type="email" placeholder="Email" value={email} onChange={(event)=>setEmail(event.target.value)} required />
                <input type="text" placeholder="Contact Number" value={phone} onChange={(event)=>setPhone(event.target.value)} />
                <textarea placeholder="Message" value={message} onChange={(event)=>setMessage(event.target.value)}></textarea>
-               <button className='sendButton' onClick={handleSubmit}>Submit</button>
+               <button className='sendButton' onClick={handleSubmit}>
+                  {submit ? <img src="/Images/loader.webp" style={{width:"20px", height:"20px"}} /> : "Submit"}
+               </button>
                <p>We Hate Spam As Much As You Do 😁</p>
             </div>
             {/* </form> */}

@@ -1,4 +1,10 @@
-@media screen and (max-width: 428px){
+@media screen and (min-width: 1730px){
+   .rounded>img{
+      width: 75%;
+   }
+}
+
+@media screen and (max-width: 435px){
    .main_homepage_text {
       padding: 15px;
       grid-template-columns: auto;
@@ -75,10 +81,14 @@
    .visitors>div>div{
       align-items: center !important;
    }
+   .main_head_contact>div:nth-child(1){
+      padding: 20px 23px 20px 23px;
+   }
    .main_head_contact>div {
-      height: 46px;
+      height: 60px !important;
       width: 203px;
       padding: 10px 23px 10px 23px;
+      font-size: 1rem;
    }
    .wryter_section {
       grid-template-columns: auto;

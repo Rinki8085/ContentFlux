@@ -1,7 +1,8 @@
-import React from "react";  
+import React, { useEffect } from "react";  
 import Services from "./Services";
 import "./ArticleWriter.css";
 import Accordion from "../../Component/Accordion";
+import { Helmet } from "react-helmet-async";
 
 const para = 'Running a business and maintaining a brand voice are two different things and requires different skillset. A website is like a showroom of your product, services, and business goal and it should convey the real message you want to deliver. That’s where Website Content Writing Services are essential. They help business and website owners to deliver the clear message, attract, engage, and retain customers.'
 
@@ -34,8 +35,18 @@ const faqs = [
 ]
 
 const WebContent = () =>{
+
+   useEffect(()=>{
+      document.title = 'Best Website Content Writing Services | Professional Web Content Development '
+   },[])
    return(
       <div>
+         <Helmet>
+            <meta
+               name="description"
+               content="Looking for the best website content writing services? Our professional website content writing agency specializes in web content writing and development to elevate your brand."
+            />
+         </Helmet>
          <Services text={"Web Content Writer"} para={para}>
             <div className="article-writer">
                <div>

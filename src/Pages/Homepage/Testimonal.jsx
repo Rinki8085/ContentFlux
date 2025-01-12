@@ -13,9 +13,8 @@ const Testimonial=()=>{
    return(
       <div className="client_testimonial">
          <div className="client_overview">
-            <h1>Client Testimonial</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper risus nec porttitor rhoncus. Etiam dolor arcu.</p>
-            
+            <h1>Our Prominent Clients</h1>
+            <p>We put our best efforts to make our clients' brands voice reach their audiences with the right words at right channels to inspire action.</p>
          </div>
          <div className="client_testimonal">
             <div className="slide_show" ref={ref}>
