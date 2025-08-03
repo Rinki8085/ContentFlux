@@ -47,11 +47,11 @@ const link = [
    //    sublink:"/",
    //    name:"Ghost Writer"
    // },
-   // {
-   //    id:9,
-   //    sublink:"/",
-   //    name: "Legal Writer"
-   // },
+   {
+      id:9,
+      sublink:"/legal-content-writing",
+      name: "Legal content Writer"
+   },
    // {
    //    id:10,
    //    sublink:"/",
@@ -72,11 +72,11 @@ const link = [
       sublink:"/technical-content-writing",
       name:"Technical Writer"
    },
-   // {
-   //    id:14,
-   //    sublink:"/",
-   //    name:"Writing Translation"
-   // },
+   {
+      id:14,
+      sublink:"/blogs",
+      name:"Blogs"
+   },
    // {
    //    id:15,
    //    sublink:"/",
@@ -122,7 +122,7 @@ function Navbar(){
 
    return(
    
-      <div className='navbar' id="nav">
+      <div className='navbar bg-[#F1EAFF]' id="nav">
          {/* <Slide direction='down'> */}
             <div className='navigation'>
                <div onClick={handleNavigation} className='nav_logo'> 

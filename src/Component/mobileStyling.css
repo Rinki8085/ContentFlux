@@ -59,7 +59,7 @@
 }
 
 @media screen and (max-width: 868px){
-   .form-content>h1{
+   .form-content>h2{
       font-size:1.2rem !important;
    }
    .navbar {

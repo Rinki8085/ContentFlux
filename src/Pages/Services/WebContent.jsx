@@ -3,6 +3,7 @@ import Services from "./Services";
 import "./ArticleWriter.css";
 import Accordion from "../../Component/Accordion";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 
 const para = 'Running a business and maintaining a brand voice are two different things and requires different skillset. A website is like a showroom of your product, services, and business goal and it should convey the real message you want to deliver. That’s where Website Content Writing Services are essential. They help business and website owners to deliver the clear message, attract, engage, and retain customers.'
 
@@ -35,17 +36,32 @@ const faqs = [
 ]
 
 const WebContent = () =>{
+const navigate = useNavigate();
 
+const handleNavigation = () => {
+   window.open("https://calendly.com/contentflux/30min", "_blank");
+   // navigate("https://calendly.com/contentflux/30min?month=2025-03", { replace: true });
+}
+
+   const handleClick = () => {
+      navigate("/contact");
+   }
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
    useEffect(()=>{
-      document.title = 'Best Website Content Writing Services | Professional Web Content Development '
+      document.title = 'Best Website Content Writing Services | Professional Web Content Development'
    },[])
    return(
-      <div>
+      <>
          <Helmet>
+            <title>Best Website Content Writing Services | Professional Web Content Development</title>
             <meta
                name="description"
                content="Looking for the best website content writing services? Our professional website content writing agency specializes in web content writing and development to elevate your brand."
             />
+            <link rel="canonical" href="https://thecontentflux.com/website-content-writing-services" />
          </Helmet>
          <Services text={"Web Content Writer"} para={para}>
             <div className="article-writer">
@@ -82,7 +98,7 @@ const WebContent = () =>{
                   <div>
                      <p>As a leading website content development service provider, we believe in creating website content that is 100% unique and specific and relevant to specific business requirements. Before submission, our vast experience team of editors edits the content manually and makes it SEO-friendly by incorporating keywords and Google algorithms. They seek to convert clicks into consumers by following SEO principles and producing error-free content.</p>
                      <p>We also guarantee that punctuation and typos are proper, which builds trust in the brand. Our website copywriting personnel also ensures quick delivery in a variety of formats, ensuring that your material arrives on time and in the format you request. Our professional website content writers understand the power of words and create content that entertains, persuades, influences, and inspires readers to act on your website.</p>
-                     <button>Get Free Consultation</button>
+                     <button onClick={handleNavigation}>Get Free Consultation</button>
                   </div>
                </div>
             </div>
@@ -90,7 +106,7 @@ const WebContent = () =>{
             <div className="article-box2">
                <h3>Leverage Our Quality Website Content Writing Services</h3>
                <p>Unleash the power of words with our premium website content writing services, suited to your specific business needs and audience engagement objectives. Here are our potent website content writing services:</p>
-               <center><button>Try Our Service</button></center>
+               <center><button onClick={handleClick}>Try Our Service</button></center>
                <div className="service-types">
                   <div>
                      <img src="/Images/service_page/icon1.png" alt="writing1" />
@@ -149,9 +165,11 @@ const WebContent = () =>{
                </div>
                
             </div>
+                        <div className="py-6">
             <Accordion data={faqs} />
+            </div>
          </Services>
-      </div>
+      </>
    )
 }
 

@@ -2,20 +2,38 @@ import React, { useEffect } from "react";
 import Services from "./Services";
 import "./ArticleWriter.css";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 
 const Copywriter = () =>{
+
+   const navigate = useNavigate();
+   
+   const handleNavigation = () => {
+      window.open("https://calendly.com/contentflux/30min", "_blank");
+      // navigate("https://calendly.com/contentflux/30min?month=2025-03", { replace: true });
+   }
+
+      const handleClick = () => {
+         navigate("/contact");
+      }
+   
+      useEffect(() => {
+         window.scrollTo(0, 0);
+       }, []);
 
    useEffect(()=>{
       document.title = 'Professional Copywriting Services | Captivating Content That Converts'
    },[])
 
    return(
-      <div>
+      <>
          <Helmet>
-         <meta 
-            name="description" 
-            content="Boost your brand with our expert copywriting services. We craft compelling, persuasive content that engages your audience and drives conversions." 
-         />
+            <title>Professional Copywriting Services | Captivating Content That Converts</title>
+            <meta 
+               name="description" 
+               content="Boost your brand with our expert copywriting services. We craft compelling, persuasive content that engages your audience and drives conversions." 
+            />
+            <link rel="canonical" href="https://thecontentflux.com/copywriting-services" />
          </Helmet>
          <Services text={"Copy Writer"}>
             <div className="article-writer">
@@ -52,7 +70,7 @@ const Copywriter = () =>{
                   <div>
                      <p>Digiorbits Services strives to provide businesses and professionals with top-notch, unique, and error-free content in order to aid them in achieving success and creating a notable online presence. Not only do we specialize in content creation, but we also execute extensive market research and analysis to deliver our customers complete content solutions.</p>
                      <p>Our knowledgeable SEO experts are well-versed in various digital marketing tactics and are able to offer organic search engine optimization services to ensure that your website remains at the forefront of SERPs (Search Engine Results Pages), allowing you to maximize your returns. Quality is essential for us here at Digiorbits Services; hence, it is our mission to provide only the finest quality of content at competitive prices. Try us out today!</p>
-                     <button>Get Free Consultation</button>
+                     <button onClick={handleNavigation}>Get Free Consultation</button>
                   </div>
                </div>
             </div>
@@ -60,7 +78,7 @@ const Copywriter = () =>{
             <div className="article-box2">
                <h3>Get Your Content Done with Digiorbits</h3>
                <p>Whether you’re a individual, little business or a large corporation, we provide a comprehensive range of services to meet your needs. We provide 100% plagiarism passed content.</p>
-               <center><button>Try Our Service</button></center>
+               <center><button onClick={handleClick}>Try Our Service</button></center>
                <div className="service-types">
                   <div>
                      <img src="/Images/service_page/writing_icon1.jpg" alt="writing1" />
@@ -123,7 +141,7 @@ const Copywriter = () =>{
                
             </div>
          </Services>
-      </div>
+      </>
    )
 }
 

@@ -1,9 +1,9 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import "./Services.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Services({text, para, children}){
+function Services({ text, para, children }) {
    const navigate = useNavigate();
    const [submit, setSubmit] = useState();
    const [name, setName] = useState('');
@@ -11,22 +11,32 @@ function Services({text, para, children}){
    const [phone, setPhone] = useState('');
    const [message, setMessage] = useState('');
 
-   const handleSubmit = async(event) =>{
+   const handleClick = () => {
+      navigate("/contact");
+   }
+
+   const handleNavigation = () => {
+      window.open("https://calendly.com/contentflux/30min", "_blank");
+      // navigate("https://calendly.com/contentflux/30min?month=2025-03", { replace: true });
+   }
+
+   const handleSubmit = async (event) => {
       event.preventDefault();
       setSubmit(true);
       try {
-         if(name!=='' && email!=='' && message!==''){
-            let data ={
+         if (name !== '' && email !== '' && message !== '') {
+            let data = {
                name, email, phone, message
             }
             console.log(data)
             axios.post("https://getform.io/f/azyyypzb", data,
-            { headers: {'Accept': 'application/json'}})
-            .then(response => {console.log(response);
-               setSubmit(false);
-               navigate("/thankyou")
-            })
-            .catch(error => console.log(error))
+               { headers: { 'Accept': 'application/json' } })
+               .then(response => {
+                  console.log(response);
+                  setSubmit(false);
+                  navigate("/thankyou")
+               })
+               .catch(error => console.log(error))
          }
       } catch (error) {
          console.log(error);
@@ -34,26 +44,26 @@ function Services({text, para, children}){
       }
    }
 
-   return(
-      <div> 
+   return (
+      <div>
          <div className="services-main">
             <div className="article-content">
                <h2>{text}</h2>
                <p>{para}</p>
                <div>
-                  <button>Talk to specialist</button>
-                  <button>Download Samples</button>
+                  <button style={{ cursor: 'pointer' }} onClick={handleClick}>Talk to specialist</button>
+                  <button style={{ cursor: 'pointer' }} onClick={handleNavigation}>Schedule Call</button>
                </div>
             </div>
             <div className="">
                <div className="cta">
-                  <input type="text" placeholder="Name" value={name} onChange={(event)=>setName(event.target.value)}  />
-                  <input type="email" placeholder="Email"  value={email} onChange={(event)=>setEmail(event.target.value)} required/>
-                  <input type="text" placeholder="Contact Number" value={phone} onChange={(event)=>setPhone(event.target.value)} />
-                  <textarea placeholder="Message" value={message} onChange={(event)=>setMessage(event.target.value)}></textarea>
+                  <input type="text" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
+                  <input type="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required />
+                  <input type="text" placeholder="Contact Number" value={phone} onChange={(event) => setPhone(event.target.value)} />
+                  <textarea placeholder="Message" value={message} onChange={(event) => setMessage(event.target.value)}></textarea>
                   <button className='sendButton' onClick={handleSubmit}>
-                  {submit ? <img src="/Images/loader.webp" style={{width:"20px", height:"20px"}} /> : "Submit"}
-               </button>                  <p>We Hate Spam As Much As You Do 😁</p>
+                     {submit ? <img src="/Images/loader.webp" style={{ width: "20px", height: "20px" }} /> : "Submit"}
+                  </button>                  <p className="pt-2">We Hate Spam As Much As You Do 😁</p>
                </div>
             </div>
          </div>

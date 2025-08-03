@@ -5,7 +5,7 @@ import {FaPhoneAlt} from 'react-icons/fa';
 import axios from 'axios';
 import './style.css';
 import "../Pages/Homepage/MobileView.css";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function ContactForm(){
    const navigate = useNavigate();
@@ -41,12 +41,13 @@ function ContactForm(){
    return(
       <div className='contact-form'>
          <div className='form-content'>
-            <h1>Let's Connect</h1>
-            <p style={{lineHeight:"17px"}}>Stand out in a sea of AI-generated sameness</p>
+            <h2>Let's Connect</h2>
+            <p className='leading-10 py-3'>Stand out in a sea of AI-generated sameness</p>
             <p className='form-text'>We understand that behind every project lies a story waiting to be shared. Reach out to us, and let's embark on this storytelling adventure together.</p>
-            <p className='links'><span><IoLocationSharp/></span><span>405, Shreeji Heights, Indore 452016</span></p>
-            <p className='links'><span><MdEmail/></span><span><a href="#">info@thecontentflux.com</a></span></p>
-            <p className='links'><span><FaPhoneAlt/></span><span><a href="#">+91 7509745109</a></span></p>
+            {/* <p className='links'><span><IoLocationSharp/></span><span>405, Shreeji Heights, Indore 452016</span></p> */}
+            <p className='links py-3'><span><MdEmail/></span><span><a href="#">info@thecontentflux.com</a></span></p>
+           <Link to='https://calendly.com/contentflux/30min' target='_blank'> <button className='animated-button highImpact !h-[50px] !shadow-md'>Free High-Impact Consultation</button></Link>
+            {/* <p className='links'><span><FaPhoneAlt/></span><span><a href="#">+91 7509745109</a></span></p> */}
          </div>
          <div className="">
             {/* <form onSubmit={handleSubmit}> */}
@@ -58,7 +59,7 @@ function ContactForm(){
                <button className='sendButton' onClick={handleSubmit}>
                   {submit ? <img src="/Images/loader.webp" style={{width:"20px", height:"20px"}} /> : "Submit"}
                </button>
-               <p>We Hate Spam As Much As You Do 😁</p>
+               <p className='!pt-2'>We Hate Spam As Much As You Do 😁</p>
             </div>
             {/* </form> */}
          </div>

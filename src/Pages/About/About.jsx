@@ -3,26 +3,36 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import "../Homepage/Homepage.css";
 import { Helmet } from 'react-helmet-async';
 import "./About.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function About(){
+  const navigate = useNavigate();
   
+     const handleClick = () => {
+        navigate("/contact");
+     }
+  
+     useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
    useEffect(()=>{
       document.title = 'About Us | Professional Content Writing Services for Startups and Enterprises'
    },[])
 
    return(
-      <div>
+      <>
          <Helmet>
+            <title>About Us | Professional Content Writing Services for Startups and Enterprises</title>
             <meta 
                name="description" 
                content="Discover our story and expertise in delivering top-notch content writing services. We help startups and enterprises worldwide achieve their goals with impactful content." 
             />
+            <link rel="canonical" href="https://thecontentflux.com/about-us" />
          </Helmet>
-         <div class="banner-container">
-            <div class="overlay">
+         <div class="banner-container ">
+            <div class="overlay !pt-24">
                <h2>About Us</h2>
-               <p style={{display:'flex', gap:'10px', alignItems:"center"}}>
+               <p className='flex gap-[10px] items-center pt-5' >
                   <span>Home</span> 
                   <span><FaLongArrowAltRight /></span>
                   <span>About</span>
@@ -61,12 +71,12 @@ function About(){
          <div className='about-section'>
             <div style={{backgroundImage:"url(/Images/Homepage/image4.jpg)", height:'100%'}}></div>
             <div style={{backgroundColor:'#312e5f'}}></div>
-            <div className='about-section1'>
+            <div className='about-section1 !py-24'>
                <p>"A writer is someone for whom writing is more difficult than it is for other people."</p>
-               <p>- Thomas Mann, Essays of Three Decades</p>
+               <p className='!pt-10'>- Thomas Mann, Essays of Three Decades</p>
             </div>
          </div>
-      </div>
+      </>
    )
 }
 

@@ -5,7 +5,7 @@ import { MdEmail, MdCall } from "react-icons/md";
 import { FaInstagramSquare } from "react-icons/fa";
 import {BsFacebook} from 'react-icons/bs';
 import './style.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Footer(){
    const navigate = useNavigate();
@@ -32,19 +32,19 @@ function Footer(){
             <div>
                <h2>Get In Touch</h2>
                <ul className='list'>
-                  <li><a href=""><span className='fSize'><IoLocationSharp/></span><span>405, Shreeji Heights, Indore 452016</span></a></li>
-                  <li><a href="mailto:example@mail.com"><span className='fSize'><MdEmail/></span><span>info@thecontentflux.com</span></a></li>
-                  <li><a href="tel:+1 234 567 890"><span className='fSize'><MdCall/></span><span>+91 7509745109</span></a></li>
-                  {/* <li><a href=""><span className='fSize'><AiFillClockCircle/></span><span>07.00 AM - 19.00 PM</span></a></li> */}
+                  {/* <li><Link to=""><span className='fSize'><IoLocationSharp/></span><span>405, Shreeji Heights, Indore 452016</span></Link></li> */}
+                  <li><Link to="mailto:example@mail.com"><span className='fSize'><MdEmail/></span><span>info@thecontentflux.com</span></Link></li>
+                  <Link to='https://calendly.com/contentflux/30min' target='_blank'><button className='freeImpact'>Free High-Impact Consultation</button></Link>
+                  {/* <li><Link to=""><span className='fSize'><LinkiFillClockCircle/></span><span>07.00 AM - 19.00 PM</span></Link></li> */}
                </ul>
             </div>
             <div>
                <h2>Quicklinks</h2>
                <ul className='pageList'>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about-us">About</a></li>
-                  <li><a href="/">FAQs</a></li>
-                  <li><a href="/contact">Contact</a></li>
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/about-us">About</Link></li>
+                  <li><Link to="/">FAQs</Link></li>
+                  <li><Link to="/contact">Contact</Link></li>
                </ul>
             </div>
             {/* <div>
@@ -64,11 +64,11 @@ function Footer(){
             </div>
             <div className='social-icon'>
                <div>Follow Us</div>
-               <div style={{fontSize:'1.1rem'}}><a href="https://www.facebook.com/ContentFlux
-               " target="_blank"><BsFacebook/></a></div>
-               <div><a href="https://x.com/ContentFlux_" target="_blank"><AiOutlineTwitter/></a></div>
-               <div><a href="https://www.instagram.com/contentfluxlimited/" target='_blank'><FaInstagramSquare /></a></div>
-               <div><a href="https://www.linkedin.com/company/contentflux/" target='_blank'><AiFillLinkedin/></a></div>
+               <div style={{fontSize:'1.1rem'}}><Link to="https://www.facebook.com/ContentFlux
+               " target="_blank"><BsFacebook/></Link></div>
+               <div><Link to="https://x.com/ContentFlux_" target="_blank"><AiOutlineTwitter/></Link></div>
+               <div><Link to="https://www.instagram.com/contentfluxlimited/" target='_blank'><FaInstagramSquare /></Link></div>
+               <div><Link to="https://www.linkedin.com/company/contentflux/" target='_blank'><AiFillLinkedin/></Link></div>
             </div>
          </div>
       </footer>

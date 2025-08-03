@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="google-site-verification" content="342fbp8wOuFfch32POLQ-8ayf8RhXlBrYoRukHoKbNQ" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KS89RQLM');</script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="google-site-verification" content="342fbp8wOuFfch32POLQ-8ayf8RhXlBrYoRukHoKbNQ" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -25,18 +30,23 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Content Flux</title>
-  </head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F91QPQ3GFH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-F91QPQ3GFH');
-  </script>
-  <body>
-    <script type="application/ld+json">
+  <title>Content Flux</title>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F91QPQ3GFH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-F91QPQ3GFH');
+</script>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS89RQLM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -56,9 +66,9 @@
         ]
       }
       </script>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -68,5 +78,56 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/", 
+        "@type": "BreadcrumbList", 
+        "itemListElement": [{
+          "@type": "ListItem", 
+          "position": 1, 
+          "name": "Homepage",
+          "item": "https://thecontentflux.com/"  
+        },{
+          "@type": "ListItem", 
+          "position": 2, 
+          "name": "Legal Content Writing Service",
+          "item": "https://thecontentflux.com/legal-content-writing"  
+        }]
+      }
+    </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you ensure the content is SEO-optimized for legal keywords?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We conduct thorough keyword research using legal-specific SEO tools. Our content includes on-page optimization elements like headings, internal links, schema, and geo-keywords that help your law firm rank higher on Google."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of legal content do you write for law firms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in a wide range of legal content, including practice area pages, legal blog posts, attorney bios, FAQ pages, and geo-targeted landing pages. Each piece is tailored to your firm’s tone, location, and legal niche."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you create content for specific legal jurisdictions or states?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We write content that aligns with jurisdiction-specific laws and terminology, ensuring relevance whether you practice in California, New York, the UK, or any other region."
+          }
+        }
+      ]
+    }
+    </script>
+</body>
+
 </html>

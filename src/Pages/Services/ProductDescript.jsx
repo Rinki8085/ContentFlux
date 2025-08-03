@@ -3,6 +3,7 @@ import Services from "./Services";
 import "./ArticleWriter.css";
 import Accordion from "../../Component/Accordion";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 
 const para = 'To convert a visitor into a buyer businesses need amazing text and visual content. These content must engage visitors and deliver the features and benefits of the product in a very effective way, that’s where product description writing services comes into action.';
 
@@ -35,18 +36,35 @@ const faqs = [
 ]
 
 const ProductDescript = () =>{
+
+   const navigate = useNavigate();
+   
+      const handleClick = () => {
+         navigate("/contact");
+      }
+      
+      const handleNavigation = () => {
+         window.open("https://calendly.com/contentflux/30min", "_blank");
+         // navigate("https://calendly.com/contentflux/30min?month=2025-03", { replace: true });
+      }
+
+      useEffect(() => {
+         window.scrollTo(0, 0);
+       }, []);
    
    useEffect(()=>{
       document.title = 'Product Description Writing Services | Highlight Your Products Effectively'
    },[])
 
    return(
-      <div>
+      <>
          <Helmet>
-         <meta 
+            <title>Product Description Writing Services | Highlight Your Products Effectively</title>
+            <meta 
                name="description" 
                content="Discover our story and expertise in delivering top-notch content writing services. We help startups and enterprises worldwide achieve their goals with impactful content." 
             />
+            <link rel="canonical" href="https://thecontentflux.com/product-descriptions" />
          </Helmet>
          <Services text={"Product Description Writing Services"} para={para}>
             <div className="article-writer">
@@ -94,7 +112,7 @@ const ProductDescript = () =>{
                      your standalone eCommerce platform or major marketplaces like Amazon, eBay, Walmart, and
                      more. Our specialized copywriters deliver tailored descriptions for each, with a swift turnaround.
                      We've got every angle covered.</p>
-                     <button>Get Free Consultation</button>
+                     <button onClick={handleNavigation}>Get Free Consultation</button>
                   </div>
                </div>
             </div>
@@ -104,7 +122,7 @@ const ProductDescript = () =>{
                <p>Our product description writing services are well-known for their quality leading to increase
                brand's visibility and capturing the audience's attention by carefully curating product writing. We
                got covered for SEO optimization, e-commerce integration, and multilingual descriptions.</p>
-               <center><button>Try Our Service</button></center>
+               <center><button onClick={handleClick}>Try Our Service</button></center>
                <div className="service-types">
                   <div>
                      <img src="/Images/service_page/writing_icon1.jpg" alt="writing1" />
@@ -172,9 +190,11 @@ const ProductDescript = () =>{
                   </div>
                </div>
             </div>
+                       <div className="py-4">
             <Accordion data={faqs} />
+            </div>
          </Services>
-      </div>
+      </>
    )
 }
 

@@ -13,7 +13,7 @@ const Testimonial=()=>{
    return(
       <div className="client_testimonial">
          <div className="client_overview">
-            <h1>Our Prominent Clients</h1>
+            <h1 className="font-semibold">Our Prominent Clients</h1>
             <p>We put our best efforts to make our clients' brands voice reach their audiences with the right words at right channels to inspire action.</p>
          </div>
          <div className="client_testimonal">

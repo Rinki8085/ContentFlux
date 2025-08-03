@@ -10,8 +10,8 @@ import { HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <BrowserRouter>
   <HelmetProvider>
-    <BrowserRouter>
       <App />
       <ToastContainer 
         position="top-right"
@@ -21,8 +21,8 @@ root.render(
         pauseOnHover
         theme="dark"
       />
-    </BrowserRouter>
   </HelmetProvider>
+    </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

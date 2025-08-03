@@ -9,7 +9,7 @@ import CountUp from "react-countup";
 import Slider from './Slider';
 import "./MobileView.css";
 import "./Homepage.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 let data = [
@@ -38,37 +38,43 @@ let grid_data = [
       id:"1",
       img:"/Images/Homepage/Group_5.png",
       heading:"Website Content Writing",
-      content:"From compelling homepage introductions to engaging product descriptions, we craft an online experience that leaves a lasting impression."
+      content:"From compelling homepage introductions to engaging product descriptions, we craft an online experience that leaves a lasting impression.",
+      link: "/website-content-writing-services"
    },
    {
       id:"2",
       img:"/Images/Homepage/Group_6.png",
       heading:"Blogs Content Writing",
-      content:"Embrace the power of storytelling through our blogs, where every post is an invitation to explore, learn, and engage."
+      content:"Embrace the power of storytelling through our blogs, where every post is an invitation to explore, learn, and engage.",
+      link: "/"
    },
    {
       id:"3",
       img:"/Images/Homepage/Group_7.png",
       heading:"Legal Content Writing",
-      content:"Legal content isn't just information; it's the embodiment of justice. Let our words present your legal prowess with clarity and authority."
+      content:"Legal content isn't just information; it's the embodiment of justice. Let our words present your legal prowess with clarity and authority.",
+      link: "/legal-content-writing"
    },
    {
       id:"4",
       img:"/Images/Homepage/Group_8.png",
       heading:"Copywriting",
-      content:"Let your brand's story unfold through copy that not only communicates but captivates. In a world inundated with words, stand out with copy that compels, convinces, and converts."
+      content:"Let your brand's story unfold through copy that not only communicates but captivates. In a world inundated with words, stand out with copy that compels, convinces, and converts.",
+      link: "/copywriting-services"
    },
    {
       id:"5",
       img:"/Images/Homepage/Group_13.png",
       heading:"Technical Content Writing",
-      content:"Your technology deserves a voice that speaks fluently to both experts and novices. Our technical content writing service makes the world of technology accessible and engaging for your audience."
+      content:"Your technology deserves a voice that speaks fluently to both experts and novices. Our technical content writing service makes the world of technology accessible and engaging for your audience.",
+      link: "/technical-content-writing"
    },
    {
       id:"6",
       img:"/Images/Homepage/Group_9.png",
       heading:"Social Media Writing",
-      content:"Your brand deserves to be heard, shared, and celebrated. Social media is more than updates; it's a language, a connection. Let us be the storytellers who amplify your brand's personality."
+      content:"Your brand deserves to be heard, shared, and celebrated. Social media is more than updates; it's a language, a connection. Let us be the storytellers who amplify your brand's personality.",
+      link: "/"
    }
 ]
 
@@ -88,35 +94,47 @@ let writer_data = [
 ]
 
 function Homepage(){
+   const navigate = useNavigate();
+
+   const handleNavigation = () => {
+      window.open("https://calendly.com/contentflux/30min", "_blank");
+      // navigate("https://calendly.com/contentflux/30min?month=2025-03", { replace: true });
+   }
+
+   const handleClick = () => {
+      navigate("/contact");
+   }
 
    useEffect(()=>{
       document.title = 'Best Content Writing Service | Content Writing company | ContentFlux'
    },[])
 
    return(
-      <div>
+      <>
          <Helmet>
+            <title>Best Content Writing Service | Content Writing company | ContentFlux</title>
             <meta 
                name="description" 
                content="ContentFlux is the best content writing service that fulfils all content requirements. Our dedicated service ensures that your brand message reaches your audience with the best clarity." 
             />
+            <link rel="canonical" href="https://thecontentflux.com/" />
          </Helmet>
          <div className='Homepage'>
          {/* ------- Header ----- */}
             <div className='main_homepage_text'> 
                   <div className='main_head_text'>
-                        <h1>Elevate Your Brand Vision with Premier Content Writing Services</h1>
-                        <p>In the world of buzzing information, empower your brand with the art of storytelling that captivates, educates, and inspires.</p>
+                        <h1 className='font-bold'>Elevate Your Brand Vision with Premier Content Writing Services</h1>
+                        <p className='pt-7'>In the world of buzzing information, empower your brand with the art of storytelling that captivates, educates, and inspires.</p>
 
                         <div className='main_head_contact'>
-                           <div className='animated-button'>
-                              <span className='text'>Get Started</span>
+                           <div className='animated-button' style={{width:'230px'}} onClick={handleNavigation}>
+                              <span className='text'>Schedule call</span>
                               <span style={{paddingTop:"5px"}} className='icon'>
                                  <FaLongArrowAltRight/>
                               </span>
                            </div>
-                           <div>
-                              <Link href='/contact' className='call-button'>
+                           <div onClick={handleClick}>
+                              <Link to='/contact' className='call-button'>
                                  <span>Contact Us</span>
                                  <MdPhoneEnabled className='icon' />
                               </Link>
@@ -143,23 +161,21 @@ function Homepage(){
             <InfinteScrollSlider/>
          </div> */}
          {/* -------- About section ------ */}
-         <div className='about_wrytr'>
+         <div className='about_wrytr !pt-7 !pb-16'>
             <div className='about_wrytr_text'>
                <div>
                   <p>Welcome to ContentFlux Content- Where Words Transform Stories</p>
-                  <p>At ContentFlux Content we believe the power of words, where we focus to create the brand message should reach the target audience with the best clarity. Our content writing service makes sure we breathe life into the ideas. Our seasoned expertise pen down content to create the interest among your audience, optimize them with better knowledge so that the brand can make sales.
+                  <p className='pt-2 !text-[16px]'>At ContentFlux Content we believe the power of words, where we focus to create the brand message should reach the target audience with the best clarity. Our content writing service makes sure we breathe life into the ideas. Our seasoned expertise pen down content to create the interest among your audience, optimize them with better knowledge so that the brand can make sales.
                   Storytelling remains the heartbeat of connection to bring your narrative to life.
                   </p>
-                  <Link to='/contact' style={{textDecoration:"none !important"}}>
                      <div className='main_head_contact'>
-                        <div className='animated-button'>
+                        <div className='animated-button' onClick={handleClick}>
                               <span>Get Quote </span>
                               <span style={{paddingTop:"5px"}} className='icon'>
                                  <FaLongArrowAltRight/>
                               </span>
                            </div>
                      </div>
-                  </Link>
                </div>
             </div>
             <div>
@@ -193,7 +209,7 @@ function Homepage(){
             </div>
             <Link to='/contact' style={{textDecoration:"none"}}>
             <div className='main_head_contact' style={{width:"220px",margin:"auto",padding:"35px 0px 45px 0px"}}>
-               <div className='animated-button get-start'>
+               <div className='animated-button get-start !h-[50px]' >
                   <span >Get Started</span>
                   <span style={{paddingTop:"5px"}} className='icon'><FaLongArrowAltRight/></span>
                </div>
@@ -210,7 +226,7 @@ function Homepage(){
                {grid_data.map((item)=>
                   <div key={item.id}>
                      <img src={item.img} height="80px" width="80px" alt='iconsImg' />
-                     <h3>{item.heading}</h3>
+                     <Link to={item.link} className='font-semibold !text-[19px]'><h3 className='pt-5'>{item.heading}</h3></Link>
                      <p>{item.content}</p>
                   </div>
                )}
@@ -238,29 +254,13 @@ function Homepage(){
          <div className='testimonial_section'>
            <Testimonial />
          </div>
-         {/* -------- react countup -------- */}
-         {/* <div className='counter_number'>
-            <div><CountUp end={210} suffix="+" duration={3} style={{fontSize:"3rem"}}/>
-               <p>Client Consultation</p>
-            </div>
-            <div><CountUp end={810} suffix="+" duration={3} style={{fontSize:"3rem"}}/>
-               <p>Positive Reviews</p>
-            </div>
-            <div><CountUp end={575} suffix="+" duration={3} style={{fontSize:"3rem"}}/>
-                  <p>Written Articles</p>
-            </div>
-            <div><CountUp end={1200} suffix="+" duration={3} style={{fontSize:"3rem"}}/>
-                  <p>Working Hours</p>
-            </div>
-         </div> */}
-         {/* -------- end ------- */}
 
          {/* -------- traffice visitors ------ */}
          <div className='traffic'>
             <div className='visitors pb-5'>
                <div>
                   <h1>We focus on Building Interest, Optimize & Make Sales With the best Words with best Clarity</h1>
-                  <Link href='/contact' style={{display:'flex', justifyContent:"center"}}><div className='main_head_contact !h-[75px]' style={{justifyContent:'center', textDecoration: "none"}}> 
+                  <Link to='/contact' style={{display:'flex', justifyContent:"center"}}><div className='main_head_contact !h-[75px]' style={{justifyContent:'center', textDecoration: "none"}}> 
                      <div className='contact-visitor animated-button'>
                         <span>Contact US</span><span className='icon' style={{paddingTop:"5px"}}><FaLongArrowAltRight/></span>
                      </div>
@@ -273,7 +273,7 @@ function Homepage(){
          {/* ----- wryter ----- */}
          <div className='wryter_section'>
             <div>
-               <h1>We make sure that the content we create is for the people, by the people to inspire the people.</h1>
+               <h2>We make sure that the content we create is for the people, by the people to inspire the people.</h2>
                <p><strike>No AI or Bot generated Content</strike></p>
             </div>
             <div className='wryter-image'>
@@ -282,7 +282,7 @@ function Homepage(){
             </div>
          </div>
          {/* ------ wryter ends ------ */}
-      </div>
+      </>
    )
 }
 

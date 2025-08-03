@@ -3,6 +3,7 @@ import Services from "./Services";
 import "./ArticleWriter.css";
 import Accordion from "../../Component/Accordion";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 
 const para ='Complex and specific topics like technology, science, engineering, medicine, finance or law need to be explained properly, so that customers of every education level can easily understand the message and information. Technical content writing services make such complex topics easily understandable.'
 
@@ -40,17 +41,33 @@ const faqs = [
 ]
 
 const TechnicalWriter = () =>{
+      const navigate = useNavigate();
+   
+      const handleClick = () => {
+         navigate("/contact");
+      }
+   
+      const handleNavigation = () => {
+         window.open("https://calendly.com/contentflux/30min", "_blank");
+         // navigate("https://calendly.com/contentflux/30min?month=2025-03", { replace: true });
+      }
+
+      useEffect(() => {
+         window.scrollTo(0, 0);
+       }, []);
       useEffect(()=>{
          document.title = 'Technical Content Writing Services | Clear and Accurate Content'
       },[])
 
    return(
-      <div>
+      <>
          <Helmet>
+            <title>Technical Content Writing Services | Clear and Accurate Content</title>
             <meta
                name="description"
                content="Simplify complex concepts with our technical content writing services. We deliver precise, well-researched, and user-friendly technical content."
             />
+            <link rel="canonical" href="https://thecontentflux.com/technical-content-writing" />
          </Helmet>
          <Services text={"Technical Content Writing Services"} para={para} >
             <div className="article-writer">
@@ -101,7 +118,7 @@ const TechnicalWriter = () =>{
                      versatile team of writers and technical writing resources ready to get your work done. So,
                      without any hesitation and putting extra effort, contact us directly and we will help businesses
                      and render top-notch technical content writing services globally.</p>
-                     <button>Get Free Consultation</button>
+                     <button onClick={handleNavigation}>Get Free Consultation</button>
                   </div>
                </div>
             </div>
@@ -110,7 +127,7 @@ const TechnicalWriter = () =>{
                <h3>Our Top-Notch Technical Content Writing Service</h3>
                <p>Our technical writing services are tailored to a variety of projects, and we have writers who are
                specialists in their industries. Our expert technical writers can offer you the following services:</p>
-               <center><button>Try Our Service</button></center>
+               <center><button onClick={handleClick}>Try Our Service</button></center>
                <div className="service-types">
                   <div>
                      <img src="/Images/service_page/writing_icon1.jpg" alt="writing1" />
@@ -179,9 +196,11 @@ const TechnicalWriter = () =>{
                   </div>
                </div>
             </div>
+                        <div className="py-4">
             <Accordion data={faqs} />
+            </div>
          </Services>
-      </div>
+      </>
    )
 }
 
