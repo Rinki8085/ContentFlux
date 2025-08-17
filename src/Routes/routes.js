@@ -7,6 +7,7 @@ const routes = [
    { path: '/product-descriptions', priority: 0.8 },
    { path: '/technical-content-writing', priority: 0.8 },
    { path: '/copywriting-services', priority: 0.8 },
+   { path: '/social-media-content-services', priority: 0.8 },
    { path: '/thankyou', priority: 0.3 },
    { path: '/blogs', priority: 1.0 }
  ];

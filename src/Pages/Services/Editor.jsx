@@ -94,14 +94,14 @@ const Editor = () =>{
                   <h3>We Help Your Brands Meet Your Targets</h3>
                   <p>We understand how challenging it can be to start and manage a business, so we strive to provide assistance with content creation and publication that is tailored to fit your business plan.</p>
                   <div>
-                     <img src="/Images/service_page/brand_icon1.png" alt="brand_icon" width="50px" height="50px" />
+                     <img src="/Images/service_page/brand_icon1.png" alt="brand_icon" className="!w-[50px] !h-[50px]" />
                      <div>
                         <h3>Make a Brand Voice</h3>
                         <p>Having a strong brand voice is essential when hiring a professional content service provider. Here at DigiOrbits, our experienced content writers understand different business perspectives, enabling us to help you experience your digital brand in a new way. With our expert team of professionals, your brand comes to life with clarity and authenticity. Let us take your business to the next level by empowering your unique message and making it heard.</p>
                      </div>
                   </div>
                   <div>
-                     <img src="/Images/service_page/brand_icon2.png" alt="brand_icon" width="50px" height="50px" />
+                     <img src="/Images/service_page/brand_icon2.png" alt="brand_icon" className="!w-[50px] !h-[50px]" />
                      <div>
                         <h3>Dedicated Content Writer</h3>
                         <p>We write various types of web content, from creative articles to SEO content writing, as per your requirement. Our professionals have great knowledge of making a solid online presence and writing an article according to the reader's choice and taste</p>

@@ -15,12 +15,12 @@ const Accordion = ({data}) => {
       <div className='accordion'>
          <h3 className="font-semibold text-lg pb-4">Frequently Asked Question</h3>
          {data.map((item, index) => 
-         <div className='accor'>
+         <div className='accor' key={index}>
             <div onClick={()=>handleClick(index)} className='!py-6'>
-               <h4>{item.question}</h4>
+               <h4 className="head !text-medium">{item.question}</h4>
                <SlArrowDown style={{fontWeight:'bold'}} />
             </div>
-            {show === index && view && <div>
+            {show ===  index && view && <div>
                <p>{item.answer}</p>
                {item.list.length>0 && <ul className="accor-list">
                   {item.list.map((list)=>
